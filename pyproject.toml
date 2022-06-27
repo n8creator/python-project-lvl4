@@ -3,6 +3,9 @@ name = "hexlet-code"
 version = "0.1.0"
 description = ""
 authors = ["n8creator <n8creator@pm.me>"]
+packages = [
+    {include = "task_manager"},
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
