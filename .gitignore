@@ -1,0 +1,13 @@
+# System artifacts
+.venv/
+.vscode/
+
+# Python-specific
+__pycache__/
+*.pyc
+
+# Local env files
+.env
+
+# Local databases
+*.sqlite3
