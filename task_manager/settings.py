@@ -26,7 +26,6 @@ ALLOWED_HOSTS = [
     "webserver",
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
