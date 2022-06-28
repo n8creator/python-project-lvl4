@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Task Manager Home Page" %}{% endblock title %}
+
+{% block content %}
+    <div class="display-4">{% trans "Task Manager" %}</div>
+    <p class="lead p-2"> {% trans "by" %} n8creator</p>
+    <hr>
+    {% blocktrans %}<p><a href="#">Log In</a> or <a href="#">Sign Up</a> to reach full features.</p>{% endblocktrans %}
+{% endblock content %}

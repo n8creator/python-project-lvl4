@@ -1,5 +1,5 @@
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 
-def homePageView(request):
-    return HttpResponse("Task Manager Start Page")
+class HomeView(TemplateView):
+    template_name = "home.html"

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load i18n %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+      <a class="navbar-brand" href="/">{% trans "Task Manager" %}</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/users/">{% trans "Users" %}</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/login/">{% trans "Log In" %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/create/">{% trans "Sign Up" %}</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+    <div class="container wrapper flex-grow-1">
+
+      <h1 class="my-4">
+      </h1>
+
+<div class="card">
+  <div class="card-body p-5 bg-light">
+    {% block content %}{% endblock content %}
+  </div>
+</div>
+
+    </div>
+    <footer>
+      <div class="container my-5 pt-4 border-top">
+
+      <div class="d-flex justify-content-between">
+        <div class="bd-highlight">
+          {% trans "Made by" %} <a href="https://github.com/n8creator/">n8creator</a>
+        </div>
+        <div class="bd-highlight">
+          <a href="https://github.com/n8creator/python-project-lvl4">{% trans "Code source" %}</a>
+        </div>
+    </footer>
+  </body>
+</body>
+</html>
