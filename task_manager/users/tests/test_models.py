@@ -1,8 +1,6 @@
 import pytest
 from django.contrib.auth import get_user_model
 
-from users.models import User
-
 
 @pytest.mark.django_db
 def test_create_user():

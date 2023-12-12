@@ -1,8 +1,8 @@
 import pytest
 from django.contrib import admin
 
-from users.admin import UserAdmin, UserChangeForm, UserCreationForm
-from users.models import User
+from task_manager.users.admin import UserAdmin, UserChangeForm, UserCreationForm
+from task_manager.users.models import User
 
 
 @pytest.fixture
