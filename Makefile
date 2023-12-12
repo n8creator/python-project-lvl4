@@ -1,3 +1,10 @@
+# Export poetry dependencies into requirements.txt file
+requirements:
+	@poetry export --without-hashes --format requirements.txt \
+		--output ./requirements.txt
+	@poetry export --without-hashes --format requirements.txt \
+		--output ./requirements.dev.txt --with test --with code-quality --with utils
+
 # Install project
 install:
 	@poetry install
@@ -29,4 +36,4 @@ deploy:
 # System commands for Makefile
 MAKEFLAGS += --no-print-directory
 
-.PHONY: install isort black lint test start migrate deploy
+.PHONY: requirements install isort black lint test start migrate deploy
