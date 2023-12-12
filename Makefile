@@ -11,21 +11,21 @@ install:
 
 # Lint project
 isort:
-	@poetry run isort task_manager
+	poetry run isort task_manager/
 
-black:
-	@poetry run black task_manager
+black: isort
+	poetry run black task_manager/
 
-lint: black
-	@poetry run flake8 task_manager
+lint: isort black
+	poetry run flake8 --config ./.flake8 task_manager/
 
 # Run tests
 test:
-	@poetry run ./manage.py test
+	poetry run pytest -vv --cov ./task_manager/ --cov-report term-missing:skip-covered
 
 # Start & deploy project
 start:
-	@poetry run ./manage.py runserver 0.0.0.0:8000
+	poetry run ./manage.py runserver 0.0.0.0:8000
 
 migrate:
 	poetry run ./manage.py migrate
