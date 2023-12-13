@@ -1,3 +1,3 @@
-web: gunicorn src.wsgi:application
+web: gunicorn task_manager.wsgi:application
 
 release: django-admin migrate --noinput
