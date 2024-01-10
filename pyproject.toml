@@ -4,9 +4,9 @@ version = "0.1.0"
 description = "Simple Task Manager App Written on Django 5.0 (inspired by Redmine CRM). This is Educational Project by Hexlet.io School"
 authors = ["n8creator <n8creator@pm.me>"]
 readme = "README.md"
-packages = [
-	{include = "hexlet_code"}
-]
+# packages = [
+# 	{include = "hexlet_code"}
+# ]
 
 [tool.poetry.dependencies]
 python = "^3.10"
