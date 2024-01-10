@@ -27,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY", "secret_key")
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-key-0g#f&l$r*$k%qp8jyh_ifkg$x1bst7@7ni^4gd&3th*d2")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
@@ -89,7 +89,7 @@ WSGI_APPLICATION = "task_manager.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 if DEBUG:
-    # Use SQLite for local development
+    # Use SQLite for local development if DEBUG is True
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -97,7 +97,7 @@ if DEBUG:
         }
     }
 else:
-    # Use PostgreSQL for production on Dokku server
+    # Use PostgreSQL for production on Dokku server if DEBUG is False
     DATABASES = {
         "default": dj_database_url.config(
             default=os.environ.get("DATABASE_URL"),
