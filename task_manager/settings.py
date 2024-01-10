@@ -32,13 +32,11 @@ SECRET_KEY = os.getenv("SECRET_KEY", "secret_key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-print("DEBUG:", type(DEBUG), DEBUG, SECRET_KEY)
-
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "webserver",
-    "monet.n8creator.com",
+    "django.n8creator.com",
 ]
 
 # Application definition

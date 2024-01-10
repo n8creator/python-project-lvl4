@@ -1,10 +1,3 @@
-# Export poetry dependencies into requirements.txt file
-requirements:
-	@poetry export --without-hashes --format requirements.txt \
-		--output ./requirements.txt
-	@poetry export --without-hashes --format requirements.txt \
-		--output ./requirements.dev.txt --with test --with code-quality --with utils
-
 # Install project
 install:
 	@poetry install
