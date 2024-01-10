@@ -1,20 +1,28 @@
-# Install project
+DIRS = task_manager/
+
+# Setup
 install:
 	@poetry install
 
-# Lint project
+# Lint
 isort:
-	poetry run isort task_manager/
+	poetry run isort $(DIRS)
 
 black: isort
-	poetry run black task_manager/
+	@poetry run black $(DIRS)
 
-lint: isort black
-	poetry run flake8 --config ./.flake8 task_manager/
+format: isort black
+
+lint:
+	@poetry run flake8 --config ./.flake8 $(DIRS)
 
 # Run tests
 test:
-	poetry run pytest -vv --cov ./task_manager/ --cov-report term-missing:skip-covered
+#   poetry run pytest -vv $(DIRS) --cov --cov-report term-missing:skip-covered
+	poetry run pytest -vv $(DIRS) --cov
+
+coverage_xml:
+	poetry run coverage xml
 
 # Start & deploy project
 start:
@@ -23,10 +31,7 @@ start:
 migrate:
 	poetry run ./manage.py migrate
 
-deploy:
-	git push dokku main
-
 # System commands for Makefile
 MAKEFLAGS += --no-print-directory
 
-.PHONY: requirements install isort black lint test start migrate deploy
+.PHONY: install isort black format lint test coverage_xml start migrate
